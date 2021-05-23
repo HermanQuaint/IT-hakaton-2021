@@ -1,8 +1,8 @@
 <template>
   <hooper :settings="hooperSettings">
-    <slide class="wrapper" v-for="(poster, indx) in getPosters" :key="indx" :index="indx">
+    <slide class="wrapper" :style="{'--urlimg': 'url(' + poster.image + ')'}" v-for="(poster, indx) in getPosters" :key="indx" :index="indx">
       <h2 class="title">{{ poster.title }}</h2>
-      <img class="carusel-img" :src="img" alt="Афиша мероприятия">
+<!--      <img class="carusel-img" :src="poster.image" alt="Афиша мероприятия">-->
     </slide>
   </hooper>
 
@@ -16,6 +16,7 @@ import poster from "../store/poster";
 export default {
   data: () => ({
     img: poster.image,
+
     hooperSettings: {
       itemsToShow: 1.5,
       breakpoints: {
@@ -62,6 +63,7 @@ export default {
 </script>
 
 <style scoped>
+
 .carusel-img {
   width: 100%;
 }
@@ -70,15 +72,23 @@ export default {
   margin-right: 15px;
 
   width: 170px;
-  height: 150px;
+  height: 200px;
 
   background-color: gray;
+  background-image: var(--urlimg);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+
   border-radius: 20px;
 }
 
 .title {
+  margin-top: 10px;
   margin-left: 10px;
   font-size: 1rem;
+  color: white;
+  text-shadow: black 2px 2px 4px;
 
 }
 
@@ -86,16 +96,10 @@ export default {
   .title {
     font-size: 1.3rem;
   }
-  .wrapper {
-    height: 150px !important;
-  }
 }
 @media (min-width:1000px) {
   .title {
     font-size: 1.3rem;
-  }
-  .wrapper {
-    height: 200px;
   }
 }
 
