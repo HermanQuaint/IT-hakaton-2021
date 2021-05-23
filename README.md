@@ -1,4 +1,4 @@
-![ЕВЕНТЛИ](https://raw.githubusercontent.com/HermanQuaint/IT-hakaton-2021/7b8fb184ff2b0e7b93e77ea64f9968529718765c/src/assets/img/logo.svg)
+![ЕВЕНТЛИ](https://raw.githubusercontent.com/HermanQuaint/IT-hakaton-2021/master/src/assets/img/logo.svg)
 ===========
 
 Лучшее приложение с мероприятиямми города и области
